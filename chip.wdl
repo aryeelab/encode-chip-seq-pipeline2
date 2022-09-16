@@ -2151,6 +2151,9 @@ workflow chip {
         overlap_opt_peak_region_size_qc = reproducibility_overlap.peak_region_size_qc,
         overlap_opt_peak_region_size_plot = reproducibility_overlap.peak_region_size_plot,
         overlap_opt_num_peak_qc = reproducibility_overlap.num_peak_qc,
+        
+        nodup_bams = nodup_bam_,
+        ctrl_nodup_bams = ctl_nodup_bam_,
 
         runtime_environment = runtime_environment
     }
@@ -2159,6 +2162,8 @@ workflow chip {
         File report = qc_report.report
         File qc_json = qc_report.qc_json
         Boolean qc_json_ref_match = qc_report.qc_json_ref_match
+        Array[File?] output_bams = qc_report.output_bams
+        Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
     }
 }
 
@@ -3100,6 +3105,9 @@ task qc_report {
         File? overlap_opt_num_peak_qc
 
         File? qc_json_ref
+        
+        Array[File?] nodup_bams
+        Array[File?] ctrl_nodup_bams
 
         RuntimeEnvironment runtime_environment
     }
@@ -3171,6 +3179,8 @@ task qc_report {
         File report = glob('*qc.html')[0]
         File qc_json = glob('*qc.json')[0]
         Boolean qc_json_ref_match = read_string('qc_json_ref_match.txt')=='True'
+        Array[File?] output_bams = nodup_bams
+        Array[File?] ctrl_output_bams = ctrl_nodup_bams
     }
     runtime {
         cpu : 1
