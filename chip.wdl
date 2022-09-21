@@ -3107,7 +3107,7 @@ task qc_report {
         File? qc_json_ref
         
         Array[File?] nodup_bams
-        Array[File?] ctrl_nodup_bams
+        Array[File?] ctrl_nodup_bams 
 
         RuntimeEnvironment runtime_environment
     }
