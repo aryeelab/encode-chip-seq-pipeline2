@@ -2172,7 +2172,7 @@ workflow chip {
         Array[File?] output_ctrl_ta = qc_report.output_ctrl_ta
         Array[File?] output_ta = qc_report.output_ta
         File? macs_signal_op_fc = qc_report.macs_signal_fc_op
-        File? macs_signal_op_pval = qc_report.macs_signal_pal_op
+        File? macs_signal_op_pval = qc_report.macs_signal_pval_op
     }
 }
 
