@@ -2154,7 +2154,12 @@ workflow chip {
         
         nodup_bams = nodup_bam_,
         ctrl_nodup_bams = ctl_nodup_bam_,
-
+        ctrl_ta = ctl_ta_,
+        ta = ta_,
+        
+        macs_signal_track_fc = macs2_signal_track.fc_bw,
+        macs_signal_track_pval = macs2_signal_track.pval_bw
+        
         runtime_environment = runtime_environment
     }
 
@@ -2164,6 +2169,10 @@ workflow chip {
         Boolean qc_json_ref_match = qc_report.qc_json_ref_match
         Array[File?] output_bams = qc_report.output_bams
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
+        File? ctrl_ta = qc.report.ctrl_ta
+        File? ta = qc.ta
+        File? macs_signal_track_fc = qc_report.macs_signal_track_fc
+        File? macs_signal_track_pval = qc_report.macs_signal_track_pval
     }
 }
 
@@ -3108,6 +3117,9 @@ task qc_report {
         
         Array[File?] nodup_bams
         Array[File?] ctrl_nodup_bams 
+        
+        File? ctrl_ta
+        File? ta
 
         RuntimeEnvironment runtime_environment
     }
@@ -3181,6 +3193,10 @@ task qc_report {
         Boolean qc_json_ref_match = read_string('qc_json_ref_match.txt')=='True'
         Array[File?] output_bams = nodup_bams
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
+        File? ctrl_ta = ctl_ta_
+        File? ta = ta_
+        File? macs_signal_track_fc 
+        File? macs_signal_track_pval
     }
     runtime {
         cpu : 1
