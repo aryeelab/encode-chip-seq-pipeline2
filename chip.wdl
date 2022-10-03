@@ -2158,7 +2158,7 @@ workflow chip {
         ta = ta_,
         
         macs_signal_track_fc = macs2_signal_track.fc_bw,
-        macs_signal_track_pval = macs2_signal_track.pval_bw
+        macs_signal_track_pval = macs2_signal_track.pval_bw,
         
         runtime_environment = runtime_environment
     }
