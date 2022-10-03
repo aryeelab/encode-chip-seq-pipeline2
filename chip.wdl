@@ -2169,8 +2169,8 @@ workflow chip {
         Boolean qc_json_ref_match = qc_report.qc_json_ref_match
         Array[File?] output_bams = qc_report.output_bams
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
-        File? output_ctrl_ta = qc_report.ctrl_ta
-        File? output_ta = qc_report.ta
+        File? output_ctrl_ta = qc_report.output_ctrl_ta
+        File? output_ta = qc_report.output_ta
         File? macs_signal_op_fc = qc_report.macs_signal_op_fc
         File? macs_signal_op_pval = qc_report.macs_signal_op_pval
     }
