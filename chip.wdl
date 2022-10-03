@@ -3118,8 +3118,8 @@ task qc_report {
         Array[File?] nodup_bams
         Array[File?] ctrl_nodup_bams 
         
-        File? ctrl_ta
-        File? ta
+        Array[File?] ctrl_ta
+        Array[File?] ta
         
         File? macs_signal_track_fc_op
         File? macs_signal_track_pval_op
@@ -3196,8 +3196,8 @@ task qc_report {
         Boolean qc_json_ref_match = read_string('qc_json_ref_match.txt')=='True'
         Array[File?] output_bams = nodup_bams
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
-        File? output_ctrl_ta = ctrl_ta
-        File? output_ta = ta
+        Array[File?] output_ctrl_ta = ctrl_ta
+        Array[File?] output_ta = ta
         File? macs_signal_op_fc = macs_signal_track_fc_op
         File? macs_signal_op_pval = macs_signal_track_pval_op
     }
