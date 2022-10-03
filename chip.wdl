@@ -3199,8 +3199,8 @@ task qc_report {
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
         Array[File?] output_ctrl_ta = ctrl_ta
         Array[File?] output_ta = ta
-        File? output_macs_signal_fc_op = macs_signal_track_fc_op
-        File? output_macs_signal_pval_op = macs_signal_track_pval_op
+        Array[File?] output_macs_signal_fc_op = macs_signal_track_fc_op
+        Array[File?] output_macs_signal_pval_op = macs_signal_track_pval_op
     }
     runtime {
         cpu : 1
