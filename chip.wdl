@@ -2169,8 +2169,8 @@ workflow chip {
         Boolean qc_json_ref_match = qc_report.qc_json_ref_match
         Array[File?] output_bams = qc_report.output_bams
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
-        File? ctrl_ta = qc.report.ctrl_ta
-        File? ta = qc.ta
+        File? output_ctrl_ta = qc.report.ctrl_ta
+        File? output_ta = qc.ta
         File? macs_signal_op_fc = qc_report.macs_signal_op_fc
         File? macs_signal_op_pval = qc_report.macs_signal_op_pval
     }
@@ -3196,8 +3196,8 @@ task qc_report {
         Boolean qc_json_ref_match = read_string('qc_json_ref_match.txt')=='True'
         Array[File?] output_bams = nodup_bams
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
-        File? ctrl_ta = ctl_ta_
-        File? ta = ta_
+        File? output_ctrl_ta = ctrl_ta
+        File? output_ta = ta
         File? macs_signal_op_fc = macs_signal_track_fc_op
         File? macs_signal_op_pval = macs_signal_track_pval_op
     }
