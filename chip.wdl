@@ -2169,10 +2169,10 @@ workflow chip {
         Boolean qc_json_ref_match = qc_report.qc_json_ref_match
         Array[File?] output_bams = qc_report.output_bams
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
-        File? output_ctrl_ta = qc_report.output_ctrl_ta
-        File? output_ta = qc_report.output_ta
-        File? macs_signal_op_fc = qc_report.macs_signal_op_fc
-        File? macs_signal_op_pval = qc_report.macs_signal_op_pval
+        Array[File?] output_ctrl_ta = qc_report.output_ctrl_ta
+        Array[File?] output_ta = qc_report.output_ta
+        File? macs_signal_op_fc = qc_report.macs_signal_fc_op
+        File? macs_signal_op_pval = qc_report.macs_signal_pal_op
     }
 }
 
@@ -3198,8 +3198,8 @@ task qc_report {
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
         Array[File?] output_ctrl_ta = ctrl_ta
         Array[File?] output_ta = ta
-        File? macs_signal_op_fc = macs_signal_track_fc_op
-        File? macs_signal_op_pval = macs_signal_track_pval_op
+        File? macs_signal_fc_op = macs_signal_track_fc_op
+        File? macs_signal_pval_op = macs_signal_track_pval_op
     }
     runtime {
         cpu : 1
