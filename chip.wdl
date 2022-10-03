@@ -2171,8 +2171,8 @@ workflow chip {
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
         Array[File?] output_ctrl_ta = qc_report.output_ctrl_ta
         Array[File?] output_ta = qc_report.output_ta
-        File? output_macs_signal_fc_op = qc_report.macs_signal_fc_op
-        File? output_macs_signal_pval_op = qc_report.macs_signal_pval_op
+        File? output_macs_signal_fc_op = qc_report.macs_signal_track_fc_op
+        File? output_macs_signal_pval_op = qc_report.macs_signal_track_pval_op
     }
 }
 
