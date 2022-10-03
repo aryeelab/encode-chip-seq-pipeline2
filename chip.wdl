@@ -2157,8 +2157,8 @@ workflow chip {
         ctrl_ta = ctl_ta_,
         ta = ta_,
         
-        macs_signal_track_fc = macs2_signal_track.fc_bw,
-        macs_signal_track_pval = macs2_signal_track.pval_bw,
+        macs_signal_track_fc_op = macs2_signal_track.fc_bw,
+        macs_signal_track_pval_op = macs2_signal_track.pval_bw,
         
         runtime_environment = runtime_environment
     }
@@ -2171,8 +2171,8 @@ workflow chip {
         Array[File?] ctrl_output_bams = qc_report.ctrl_output_bams
         Array[File?] output_ctrl_ta = qc_report.output_ctrl_ta
         Array[File?] output_ta = qc_report.output_ta
-        File? macs_signal_op_fc = qc_report.macs_signal_fc_op
-        File? macs_signal_op_pval = qc_report.macs_signal_pval_op
+        File? output_macs_signal_fc_op = qc_report.macs_signal_fc_op
+        File? output_macs_signal_pval_op = qc_report.macs_signal_pval_op
     }
 }
 
@@ -3198,8 +3198,8 @@ task qc_report {
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
         Array[File?] output_ctrl_ta = ctrl_ta
         Array[File?] output_ta = ta
-        File? macs_signal_fc_op = macs_signal_track_fc_op
-        File? macs_signal_pval_op = macs_signal_track_pval_op
+        File? output_macs_signal_fc_op = macs_signal_track_fc_op
+        File? output_macs_signal_pval_op = macs_signal_track_pval_op
     }
     runtime {
         cpu : 1
