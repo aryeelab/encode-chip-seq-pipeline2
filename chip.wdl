@@ -3120,6 +3120,9 @@ task qc_report {
         
         File? ctrl_ta
         File? ta
+        
+        File? macs_signal_track_fc_
+        File? macs_signal_track_pval_
 
         RuntimeEnvironment runtime_environment
     }
@@ -3195,8 +3198,8 @@ task qc_report {
         Array[File?] ctrl_output_bams = ctrl_nodup_bams
         File? ctrl_ta = ctl_ta_
         File? ta = ta_
-        File? macs_signal_track_fc 
-        File? macs_signal_track_pval
+        File? macs_signal_track_fc = macs_signal_track_fc_
+        File? macs_signal_track_pval = macs_signal_track_pval_
     }
     runtime {
         cpu : 1
