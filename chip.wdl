@@ -3208,7 +3208,7 @@ task qc_report {
         Array[File?] output_ta = ta
         Array[File?] output_macs_signal_fc_op = macs_signal_track_fc_op
         Array[File?] output_macs_signal_pval_op = macs_signal_track_pval_op
-        File output_bfilt_peaks_op = bfilt_peaks_op
+        File? output_bfilt_peaks_op = bfilt_peaks_op
     }
     runtime {
         cpu : 1
