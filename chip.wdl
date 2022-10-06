@@ -2160,6 +2160,8 @@ workflow chip {
         macs_signal_track_fc_op = macs2_signal_track.fc_bw,
         macs_signal_track_pval_op = macs2_signal_track.pval_bw,
         
+        bfilt_peaks_op = call_peak_pooled.bfilt_peak,
+        
         runtime_environment = runtime_environment
     }
 
@@ -3124,6 +3126,8 @@ task qc_report {
         
         Array[File?] macs_signal_track_fc_op
         Array[File?] macs_signal_track_pval_op
+        
+        File? bfilt_peaks_op
 
         RuntimeEnvironment runtime_environment
     }
@@ -3201,6 +3205,7 @@ task qc_report {
         Array[File?] output_ta = ta
         Array[File?] output_macs_signal_fc_op = macs_signal_track_fc_op
         Array[File?] output_macs_signal_pval_op = macs_signal_track_pval_op
+        File output_bfilt_peaks_op = bfilt_peaks_op
     }
     runtime {
         cpu : 1
