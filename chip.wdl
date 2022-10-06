@@ -2176,6 +2176,9 @@ workflow chip {
         
         Array[File?] output_macs_signal_fc_op = qc_report.output_macs_signal_fc_op
         Array[File?] output_macs_signal_pval_op = qc_report.output_macs_signal_pval_op
+        
+        File? output_bfilt_peaks_op = qc_report.output_bfilt_peaks_op
+        
     }
 }
 
