@@ -2162,6 +2162,9 @@ workflow chip {
         
         bfilt_peaks_op = call_peak_pooled.bfilt_peak,
         
+        idr_peaks_conservative_op = reproducibility_idr.conservative_peak,
+        overlap_peaks_conservative_op = reproducibility_overlap.conservative_peak,
+        
         runtime_environment = runtime_environment
     }
 
@@ -3131,6 +3134,9 @@ task qc_report {
         Array[File?] macs_signal_track_pval_op
         
         File? bfilt_peaks_op
+        
+        File? idr_peaks_conservative_op
+        File? overlap_peaks_conservative_op
 
         RuntimeEnvironment runtime_environment
     }
@@ -3209,6 +3215,8 @@ task qc_report {
         Array[File?] output_macs_signal_fc_op = macs_signal_track_fc_op
         Array[File?] output_macs_signal_pval_op = macs_signal_track_pval_op
         File? output_bfilt_peaks_op = bfilt_peaks_op
+        File? output_idr_peaks_conservative_op = idr_peaks_conservative_op
+        File? output_overlap_peaks_conservative_op = overlap_peaks_conservative_op
     }
     runtime {
         cpu : 1
