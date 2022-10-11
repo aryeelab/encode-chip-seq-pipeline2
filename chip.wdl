@@ -2182,6 +2182,10 @@ workflow chip {
         
         File? output_bfilt_peaks_op = qc_report.output_bfilt_peaks_op
         
+        File? idr_peaks_conservative_op = qc_report.output_idr_peaks_conservative_op
+        
+        File? overlap_peaks_conservative_op = qc_report.output_overlap_peaks_conservative_op
+        
     }
 }
 
