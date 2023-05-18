@@ -1,5 +1,7 @@
 # ENCODE Transcription Factor and Histone ChIP-Seq processing pipeline
 
+Aryee Lab version forked from [sidwekhande/chip-seq-pipeline2](https://github.com/sidwekhande/chip-seq-pipeline2).
+
 [![CircleCI](https://circleci.com/gh/ENCODE-DCC/chip-seq-pipeline2/tree/master.svg?style=svg)](https://circleci.com/gh/ENCODE-DCC/chip-seq-pipeline2/tree/master)
 
 
